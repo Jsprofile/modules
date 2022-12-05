@@ -1,0 +1,110 @@
+header {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100000000000;
+}
+
+header img {
+    max-width: 200px;
+}
+
+header a+a {
+    margin-left: 2vw;
+}
+
+header a {
+    color: #fff;
+    font-size: 14px
+}
+
+header a span {
+    font-size: 18px;
+    position: relative;
+}
+
+header a span::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: var(--primary_normal);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+
+.bar {
+    width: 30px;
+    height: 20px;
+    z-index: 100000;
+    display: none;
+}
+
+.bar div {
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background: #fff;
+    transition: .3s;
+}
+
+.bar div {
+    margin-bottom: 5px;
+}
+
+.activeBars .top {
+    transform: rotate(-45deg) translate(-11px, 11px);
+}
+
+.activeBars .middle {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+
+.activeBars .bottom {
+    transform: rotate(45deg);
+}
+
+.activeNav {
+    transform: translateX(0);
+}
+
+
+@media (max-width: 800px) {
+    .bar{
+        display: block;
+    }
+
+    nav {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgb(24, 24, 24);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5vh;
+        transform: translateX(-100%);
+        transition: .3s;
+    }
+
+
+    header a {
+        font-size: 16px
+    }
+
+    header a span {
+        font-size: 20px;
+    }
+}
